@@ -1,0 +1,112 @@
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "bar dashboard";
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.4fr 1.6fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "logo"
+    "m_bar";
+  grid-area: bar;
+  border: 1px solid black;
+  
+}
+
+.logo { 
+  grid-area: logo; 
+  
+  border: 1px solid red;
+  text-align: center;
+  margin: 5px;
+  
+}
+
+.m_bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "b_dashboard"
+    "b_configuracion"
+    "."
+    "."
+    "."
+    ".";
+  grid-area: m_bar;
+  text-align: center;
+  border: 1px solid green;
+  margin: 5px;
+}
+
+.b_dashboard { 
+  grid-area: b_dashboard;
+  padding-top: 10px; 
+  
+}
+
+.b_configuracion { 
+  grid-area: b_configuracion; 
+  padding-top: 10px;
+
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.5fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "info_dashboard"
+    "log";
+  grid-area: dashboard;
+  border: 1px solid red;
+  
+}
+
+.log { 
+  grid-area: log; 
+  border: 1px solid brown;
+  margin: 5px;
+  text-align: center;
+}
+
+.info_dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "info1"
+    "info2";
+  grid-area: info_dashboard;
+  border: 1px solid blue;
+  margin: 5px;
+}
+
+.info1 { 
+  grid-area: info1; 
+  border: 1px solid black;
+  margin: 5px;
+  text-align: center;
+}
+
+.info2 { 
+  grid-area: info2; 
+  border: 1px solid black;
+  margin: 5px;
+  text-align: center;
+}
