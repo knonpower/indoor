@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+{% load static %}
+{% block --CONFIGURACION-- %}
+
+<div class="container" id="configuracion">
+    <div class="row" id="temperatura">
+        <div id="temperatura_min" class="col-6 col-sm-2 form-floating pt-2">
+            <input type="temperatura_min" class="form-control" id="floatingInput" placeholder="temperatura">
+            <label for="floatingInput">Temperatura Minima</label>
+        </div>
+
+        <div id="temperatura_max" class="col-6 col-sm-2 form-floating pt-2 d-block">
+            <input type="temperatura_max" class="form-control" id="floatingInput" placeholder="humedad">
+            <label for="floatingInput">Temperatura Maxima</label>
+        </div>
+    </div>
+    <div class="row" id="hora">
+        <div id="hora_encendido" class="col-6 col-sm-2 form-floating mb-3 w-40 pt-2 d-block">
+            <input type="hora_encendido" class="form-control" id="floatingInput" placeholder="hora encendido">
+            <label for="floatingInput">Hora Encendido</label>
+        </div>
+        <div id="hora_apagado" class="col-6 col-sm-2 form-floating mb-3 w-40 pt-2 d-block">
+            <input type="hora_apagado" class="form-control" id="floatingInput" placeholder="hora apagado">
+            <label for="floatingInput">Hora Apagado</label>
+
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+{% endblock %}
