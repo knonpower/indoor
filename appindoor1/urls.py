@@ -1,11 +1,12 @@
 from django.urls import path
-from . import views
+from .views import home, indoor, configuracion, servicio, eliminar
 
 app_name = "appindoor1"
 
 urlpatterns = [
-    path('home/', views.home, name='home'),
-    path('indoor/', views.indoor, name='indoor'),
-    path('configuracion/', views.configuracion, name='configuracion'),
-    path('servicio/', views.servicio, name='servicio'),
+    path('', home, name="home"),
+    path('indoor/', indoor, name="indoor"),
+    path('configuracion/', configuracion, name="configuracion"),
+    path('servicio/', servicio, name="servicio"),
+    path('eliminar/<id>/', eliminar, name="eliminar"),
 ]

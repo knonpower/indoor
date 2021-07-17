@@ -8,11 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>INDOOR</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-  <link href="{% static 'appindoor1/css/style.css' %}" rel="stylesheet">
+  
+  <link href="{% static '/appindoor1/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static '/appindoor1/css/style.css' %}" rel="stylesheet">
+  
+  
+  
 
 </head>
 
@@ -54,6 +57,25 @@
   <!-- Production version -->
 
 </body>
-<script src="{% static 'appindoor1/js/bootstrap.min.js' %}"></script>
 
+  
+  <script src="{% static '/appindoor1/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'appindoor1/js/jquery-3.6.0.min.js' %}"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
+  {% if messages %}
+    {% for m in messages %}
+      <script>
+        Swal.fire({
+          "title": "Felicitaciones",
+          "text": "{{m}}",
+          "icon": "success"
+        })
+      </script>
+    {% endfor %}
+  {% endif %}
+  
+  {% block js%}
+  {% endblock %}
+  
 </html>
