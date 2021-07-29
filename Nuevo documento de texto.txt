@@ -1,0 +1,32 @@
+var url = "{% url 'appindoor1:eliminar' %}";
+var id = $(this).attr('id');
+window.location.href = url + "/" + id;
+
+
+
+
+
+function eliminarIndoor(id){
+        
+        Swal.fire({
+            "title":"¿Estas seguro?",
+            "text":"Los datos no se podran recuperar",
+            "icon":"question",
+            "showCancelButton":true,
+            "cancelButtonText":"No, Cancelar",
+            "confirmButtonText":"Si, Eliminar",
+            "confirmButtonColor":"#dc3545"
+        })
+        .then(function(result){
+            if(result.isConfirmed){
+                              
+                var url="{% url 'appindoor1:eliminar' "parseInt(id)" %}";
+            
+                
+                
+                window.location.href=url;
+                console.log(window.location.href);
+
+            }
+        })
+    }

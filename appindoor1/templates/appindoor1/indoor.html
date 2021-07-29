@@ -6,7 +6,7 @@
 {% block js %}
 
 <script src="{% static 'appindoor1/js/confirmacion.js' %}"></script>
-
+<script src="{% static 'appindoor1/js/main.js' %}"></script>
 {% endblock %}
 
 {% block --INDOOR-- %}
@@ -17,18 +17,20 @@
         <main class="container-fluid">
             <div class="row">
                 <div class="container-fluid">
-                    <div class="card">
-                        <div class="card-header">
+                    <div class="card border-left-warning shadow h-100 py-2">
+                        <div class="card-header border-left-warning shadow h-100 py-2">
                         
                                 <h3 class="text-primary justify-content-center">Creacion del Indoor</h3>
                                 <hr style="border-top:1px dotted #000;"/>
                                 
                                 <form class="form-inline" method="POST">
                                     {% csrf_token %}
-                                                
-                                    <div class="input-group mb3">
-                                        
-                                        <input class="form-control" type="text" name="nombre_indoor" placeholder="Nombre Indoor" style="width:50%;" required="required"/>
+                                    <table class="mb3">
+                                        {{ form.as_table }}
+                                    </table>   
+                                    <div class=" mb3">                                  
+                                        <!--<input class="form-control" type="text" name="nombre_indoor" placeholder="Nombre Indoor" style="width:50%;" required="required"/>
+                                        -->
                                         <br>
                                         <button type="reset" class="btn btn-sm btn-outline-danger"><span class="glyphicon glyphicon-plus"></span>CLEAN</button>
                                         <button type="submit" class="btn btn-sm btn-outline-success"><span class="glyphicon glyphicon-plus"></span> ADD</button>
@@ -43,6 +45,7 @@
                                             <tr>
                                                 <th scope="col">Nombre Indoor</th>
                                                 <th scope="col">Opciones</th>
+                                                <th scope="col">Ajustes</th>
                                                 <th></th>
                                             </tr> 
                                         </thead>
@@ -54,7 +57,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                                        <a href="#" class="btn btn-secondary btn-sm">Planes</a>
+                                                        <button href="#" onclick="plan('{% url 'appindoor1:plan' indoor.id %}')" class="btn btn-secondary btn-sm">Planes</button>
                                                         <a href="#" class="btn btn-secondary btn-sm">Perifericos</a>
                                                         <a href="#" class="btn btn-secondary btn-sm">Cultivos</a>
                                                     </div>
@@ -62,7 +65,7 @@
                                                 <td>
                                                     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                                         <a href="#" onclick="confirmarEliminacion({{indoor.id}})" class="btn btn-secondary btn-sm bi bi-trash"></a>
-                                                        <a href="" class="btn btn-secondary btn-sm bi bi-pencil-square" data-toggle="modal" data-target="#modaledit1"></a>
+                                                        <a href="{% url 'appindoor1:modificar' indoor.id %}" class="btn btn-secondary btn-sm bi bi-pencil-square" data-toggle="modal" data-target="#modaledit1"></a>
                                                     </div>
                             
                                                 </td>
@@ -80,6 +83,9 @@
     </div>
 </main>
 
+<div class="modal fade" id="plan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+</div>
 {% endblock %}
 
 

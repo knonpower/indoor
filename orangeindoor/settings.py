@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'appindoor1',
+    'appindoor1.apps.Appindoor1Config',
     'crispy_forms',
 ]
 
@@ -124,3 +124,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 

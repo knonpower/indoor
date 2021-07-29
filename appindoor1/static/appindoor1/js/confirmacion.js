@@ -1,4 +1,4 @@
-function confirmarEliminacion(id) {
+function confirmarEliminacion(pk) {
     
     Swal.fire({
         "title":"¿Estas seguro?",
@@ -10,9 +10,10 @@ function confirmarEliminacion(id) {
         "confirmButtonColor":"#dc3545"
     }).then((result) => {
         if(result.value) {         
-            window.location.href="/eliminar/"+id+"/";
+            window.location.href="/eliminar/"+pk+"/";
             console.log(window.location.href);
 
         }
     })
 }
+

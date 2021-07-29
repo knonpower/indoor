@@ -1,0 +1,43 @@
+{% extends "base.html" %} 
+
+{% load static %} 
+
+{% block js %}
+
+<script src="{% static 'appindoor1/js/confirmacion.js' %}"></script>
+<script src="{% static 'appindoor1/js/main.js' %}"></script>
+
+{% endblock %} 
+
+{% block --MODIFICAR-- %}
+<div class="modal-dialog modal-lg" role="document"> 
+    <div class="modal-content">
+      <div>
+        <h2>Modificar Indoor</h2>
+        <h3 class="text-primary justify-content-center">Modificar</h3>
+        <hr style="border-top: 1px dotted #000" />
+
+        <form class="form-inline" method="POST">
+          {% csrf_token %}
+          <table class="mb3">
+            {{ form.as_table }}
+          </table>
+          <div class="mb3">
+            <br />
+            <button type="reset" class="btn btn-sm btn-outline-danger">
+              <span class="glyphicon glyphicon-plus"></span>CLEAN
+            </button>
+            <button type="submit" class="btn btn-sm btn-outline-success">
+              <span class="glyphicon glyphicon-plus"></span> ADD
+            </button>
+          </div>
+        </form>
+        <hr style="border-top: 1px dotted #000" />
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modificar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+</div>
+{% endblock %}

@@ -1,13 +1,14 @@
 from django import forms
+from django.forms import ModelForm
 from .models import Indoor, Plan
 
-class IndoorForm(forms.ModelForm):
+class IndoorForm(ModelForm):
     
     class Meta:
         model = Indoor
         fields = '__all__'
 
-class PlanForm(forms.ModelForm):
+class PlanForm(ModelForm):
 
     class Meta:
         model = Plan

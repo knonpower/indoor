@@ -11,13 +11,14 @@ class Indoor(models.Model):
     
 
 class Plan(models.Model):
+    indoor = models.ForeignKey(Indoor, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=50)
-    hora_encendido = models.DateTimeField()
-    hora_apagado = models.DateTimeField()
-    temperatura_minima = models.IntegerField(max_length=2)
-    temperatura_maxima = models.IntegerField(max_length=2)
-    humedad_minima = models.IntegerField(max_length=2)
-    humedad_maxima = models.IntegerField(max_length=2)
+    hora_encendido = models.TimeField()
+    hora_apagado = models.TimeField()
+    temperatura_minima = models.IntegerField()
+    temperatura_maxima = models.IntegerField()
+    humedad_minima = models.IntegerField()
+    humedad_maxima = models.IntegerField()
 
     def __str__(self):
         return self.nombre
