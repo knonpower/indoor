@@ -60,3 +60,26 @@
   .micro-benefits span{font-size:11px}
   .outputs{grid-template-columns:1fr}
 }
+
+/* Responsive V4: enforce mobile layout on portrait phones and tablets */
+@media screen and (max-width:1100px){
+  .desktop-nav,.topbar>.button{display:none!important}
+  .menu-button{display:grid!important;place-items:center;margin-left:auto}
+  .mobile-nav{display:none!important}
+  .mobile-nav.open{display:grid!important}
+  .hero{display:flex!important;flex-direction:column!important;min-width:0}
+  .hero-copy,.hero-media{width:100%!important;min-width:0!important}
+  .interactive-section{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+  .feature-grid,.stage-grid,.tech-grid,.safety-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media screen and (max-width:760px){
+  .topbar{padding-inline:16px!important}
+  .hero-copy{padding:48px 20px 32px!important}
+  .hero h1{font-size:clamp(34px,9vw,48px)!important}
+  .hero-media{min-height:450px!important}
+  .section{padding:52px 18px!important}
+  .feature-grid,.stage-grid,.tech-grid,.safety-grid,.audience-grid{grid-template-columns:minmax(0,1fr)!important}
+  .dashboard-window,.dash-content{width:100%;max-width:100%;min-width:0}
+  .dashboard-window{overflow-x:auto}
+  .cta{display:flex!important;flex-direction:column!important;align-items:stretch!important}
+}
