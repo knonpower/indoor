@@ -7,8 +7,9 @@ if (year) year.textContent = new Date().getFullYear();
 const menuButton = qs("#menuButton");
 const mobileNav = qs("#mobileNav");
 if (menuButton && mobileNav) {
-  menuButton.addEventListener("click", () => mobileNav.classList.toggle("open"));
-  qsa("#mobileNav a").forEach(a => a.addEventListener("click", () => mobileNav.classList.remove("open")));
+  menuButton.addEventListener("click", () => { const open = mobileNav.classList.toggle("open"); menuButton.setAttribute("aria-expanded", String(open)); menuButton.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú"); });
+  qsa("#mobileNav a").forEach(a => a.addEventListener("click", () => { mobileNav.classList.remove("open"); menuButton.setAttribute("aria-expanded", "false"); menuButton.setAttribute("aria-label", "Abrir menú"); }));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { mobileNav.classList.remove("open"); menuButton.setAttribute("aria-expanded", "false"); menuButton.setAttribute("aria-label", "Abrir menú"); } });
 }
 
 const observer = new IntersectionObserver((entries) => {
