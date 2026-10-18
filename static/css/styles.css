@@ -11,3 +11,52 @@
 @media(max-width:720px){.hero h1{font-size:clamp(2.3rem,10vw,3.8rem)}.hero-lead{font-size:1rem}.section-heading h2{font-size:clamp(1.9rem,8vw,2.8rem)}}
 
 .smb-brand-logo{display:block;width:46px;height:46px;object-fit:contain;border-radius:50%;background:#0b1415;flex-shrink:0}.brand{gap:12px}@media(max-width:520px){.smb-brand-logo{width:38px;height:38px}.brand{font-size:17px}}
+
+/* SMB V3 mobile-first refinements */
+@media(max-width:760px){
+  html{scroll-padding-top:76px}
+  body{overflow-x:clip}
+  .topbar{height:66px;padding-inline:16px;gap:12px}
+  .brand{min-width:0;font-size:16px;gap:8px}
+  .brand>span{overflow:hidden;text-overflow:ellipsis}
+  .smb-brand-logo{width:42px;height:42px}
+  .menu-button{margin-left:auto;min-width:44px;min-height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px}
+  .mobile-nav{top:66px;padding:10px 16px 18px;grid-template-columns:1fr 1fr;box-shadow:0 22px 40px #0009;max-height:calc(100dvh - 66px);overflow-y:auto}
+  .mobile-nav a{min-height:44px;display:flex;align-items:center;padding:10px 12px;border-radius:8px}
+  .mobile-nav a:focus-visible{outline:2px solid var(--cyan)}
+  .hero{display:flex;flex-direction:column}
+  .hero-copy{padding:52px 20px 30px}
+  .hero h1{font-size:clamp(35px,9vw,52px);line-height:1.1;overflow-wrap:break-word}
+  .hero-lead{font-size:16px;line-height:1.6}
+  .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+  .hero-actions .button{width:100%;min-height:48px;text-align:center}
+  .micro-benefits{flex-wrap:wrap;gap:12px}
+  .hero-media{min-height:480px;overflow:hidden}
+  .hero-media>img{object-fit:cover}
+  .live-card{top:18px;left:16px;right:16px;width:auto;max-width:390px;margin-inline:auto}
+  .device-card{top:auto;bottom:16px;left:50%;transform:translateX(-50%);width:125px;height:150px}
+  .section{padding:58px 20px}
+  .section-heading h2{font-size:clamp(29px,7.5vw,42px);line-height:1.14}
+  .feature-grid,.stage-grid,.tech-grid,.safety-grid,.audience-grid{gap:14px}
+  .dashboard-window{min-width:0;overflow:hidden}
+  .dash-content,.dash-bottom,.dash-kpis,.chart-card{min-width:0}
+  .dash-kpis{grid-template-columns:1fr 1fr;gap:10px}
+  .dash-kpis .kpi{min-width:0}
+  .chart-card svg{max-width:100%}
+  .system-flow{gap:12px}
+  .outputs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cta-actions{width:100%;display:flex;flex-direction:column;align-items:stretch}
+  .cta-actions .button{width:100%}
+  .whatsapp-float{right:14px;bottom:max(14px,env(safe-area-inset-bottom));z-index:60}
+}
+@media(max-width:420px){
+  .hero-copy{padding-top:40px}
+  .hero-media{min-height:490px}
+  .live-card{font-size:12px}
+  .device-card{display:none}
+  .dash-kpis{grid-template-columns:1fr}
+  .micro-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .micro-benefits>div{min-width:0}
+  .micro-benefits span{font-size:11px}
+  .outputs{grid-template-columns:1fr}
+}
